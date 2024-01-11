@@ -22,8 +22,9 @@ public class JWTProvider {
     
     //Signature
     private static final String JWT_SECRET = "zqNx2Rx4a837H54Rm3L54cR43qi95N8Wwc5H2XdtBGr45W6U9t2yPZVzzwHeLEXs";
+
     //Delai de validité
-    private static final long EXPIRES_AT = 900_000;
+    private static final long EXPIRES_AT = 900;
     // Nom en tête
     private static final String AUTH_HEADER = "Authorization";
     //Type
@@ -73,7 +74,7 @@ public class JWTProvider {
 
             //4 les roles soient bons (on ne le fait pas tout le temps)
             List<UserRole> tokenRoles = jwt.getClaim("roles").asList(UserRole.class);
-            
+
             return user.getRoles().containsAll(tokenRoles);
             
             

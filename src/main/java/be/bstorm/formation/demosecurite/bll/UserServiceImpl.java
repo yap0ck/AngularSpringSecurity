@@ -49,21 +49,22 @@ public class UserServiceImpl implements UserService {
         userRepository.save(entity);
     }
 
-    
     @Override
     public AuthDTO login(LoginForm form) {
+
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(form.getLogin(),form.getPassword()));
-        
+
         User user = userRepository.findByLogin(form.getLogin()).get();
-        
+
         String token = jwtProvider.generateToken(user.getUsername(), List.copyOf(user.getRoles()));
-        
+
         return AuthDTO.builder()
                 .token(token)
                 .login(user.getLogin())
                 .roles(user.getRoles())
                 .build();
     }
+
 
     @Override
     public Optional<User> getOne(String login) {

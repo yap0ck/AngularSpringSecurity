@@ -35,13 +35,15 @@ public class SecurityConfig {
         http.csrf(AbstractHttpConfigurer::disable)
                 .cors(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(request -> {
+
+/*                    request
                     
-                    /*
                     .requestMatchers("/security/test/permit-all" ).permitAll()
                     .requestMatchers("/security/test/non-existent" ).denyAll()
 
                     .requestMatchers("/security/test/connected" ).authenticated()
                     .requestMatchers("/security/test/not-connected" ).anonymous()
+
                     // role USER => authority ROLE_USER
                     .requestMatchers("/security/test/role_user" ).hasRole("USER")
                     .requestMatchers("/security/test/any_role" ).hasAnyRole("USER", "ADMIN")
@@ -56,6 +58,10 @@ public class SecurityConfig {
                     // ? représente 1 caractère
                     .requestMatchers("/security/test/*", "/security/t?st").denyAll()
 
+
+
+                    .requestMatchers(HttpMethod.DELETE,"/produit/**").permitAll()
+
                     
                     .requestMatchers(HttpMethod.POST).hasRole("ADMIN")
                     .requestMatchers(HttpMethod.GET, "/store/**").authenticated()
@@ -68,9 +74,8 @@ public class SecurityConfig {
                     .requestMatchers(HttpMethod.DELETE).hasAnyRole("ADMIN", "GERANT")
 
 //                    .requestMatchers("/auth/**").permitAll()
-                            
-                     */
-                            
+                            */
+
                     request.anyRequest().permitAll();
                 });
         
