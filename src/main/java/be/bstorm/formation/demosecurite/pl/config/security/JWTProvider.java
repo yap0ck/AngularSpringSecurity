@@ -24,7 +24,7 @@ public class JWTProvider {
     private static final String JWT_SECRET = "zqNx2Rx4a837H54Rm3L54cR43qi95N8Wwc5H2XdtBGr45W6U9t2yPZVzzwHeLEXs";
 
     //Delai de validité
-    private static final long EXPIRES_AT = 900;
+    private static final long EXPIRES_AT = 900_000;
     // Nom en tête
     private static final String AUTH_HEADER = "Authorization";
     //Type
