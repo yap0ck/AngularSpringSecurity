@@ -1,0 +1,29 @@
+nav {
+  background-color: pink;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: inline;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+}
+
+a:hover {
+  color: red;
+}
+
+.space{
+  margin-top: 40px;
+}

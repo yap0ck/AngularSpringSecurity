@@ -2,7 +2,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/securite
     username: postgres
-    password: password
+    password: admin
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -12,3 +12,5 @@ spring:
     properties:
       hibernate:
         format_sql: true
+server:
+  port: 8081

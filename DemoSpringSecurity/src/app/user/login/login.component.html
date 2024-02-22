@@ -1,0 +1,7 @@
+<section>
+  <form [formGroup]="form" (ngSubmit)="login()">
+    <input type="text" formControlName="login">
+    <input type="password" formControlName="password">
+    <input type="submit" [disabled]="!form.valid">
+  </form>
+</section>

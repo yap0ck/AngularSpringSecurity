@@ -1,0 +1,10 @@
+<h1>{{localStorage.getItem("login")}}</h1>
+<h2>{{role}}</h2>
+<ul>
+  <li *ngFor="let b of user.badges">{{b}}</li>
+</ul>
+<input type="button" (click)="disconnect()" value="Se déconnecter">
+<app-all *ngIf="role === 'ADMIN'">
+
+</app-all>
+
